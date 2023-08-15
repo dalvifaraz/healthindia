@@ -3,6 +3,7 @@ import './pdf.css';
 import logo from './logo2.png';
 
 const PDF = ({ formData }) => {
+  console.log('hello', formData);
   return (
     <div className="container pdf-content printable-content canvas">
       <div className="d-flex justify-content-around">
@@ -23,46 +24,46 @@ const PDF = ({ formData }) => {
         <div className="d-flex flex-column " style={{ flex: 1 }}>
           <div className="d-flex flex-row border-bottom pt-1 px-3 align-items-end">
             <div style={{ flex: 1.5 }}>
-              <h4>Name : {formData.name}</h4>
+              <h4>Name : {formData?.name}</h4>
               <div className="d-flex align-items-center">
                 <h4>Passport No : </h4>
-                <h5>{formData.passportNumber}</h5>
+                <h5>{formData?.passportNumber}</h5>
               </div>
               <div className="d-flex align-items-center">
                 <h4>Profession Agency : </h4>
-                <h5>{formData.profession}</h5>
+                <h5>{formData?.profession}</h5>
               </div>
               <div className="d-flex align-items-center">
                 <h4>Recruiting Agency : </h4>
-                <h5>{formData.recruitingAgency}</h5>
+                <h5>{formData?.recruitingAgency}</h5>
               </div>
             </div>
             <div style={{ flex: 0.5 }}>
               <div className="d-flex align-items-center">
                 <h4>Age : </h4>
-                <h5>{formData.age}</h5>
+                <h5>{formData?.age}</h5>
               </div>
               <div className="d-flex align-items-center">
                 <h4>Gender : </h4>
-                <h5>{formData.gender}</h5>
+                <h5>{formData?.gender}</h5>
               </div>
               <div className="d-flex align-items-center">
                 <h4>Weight : </h4>
-                <h5>{formData.weight}</h5>
+                <h5>{formData?.weight}</h5>
               </div>
             </div>
             <div style={{ flex: 1 }}>
               <div className="d-flex align-items-center">
                 <h4>ID : </h4>
-                <h5>{formData.id}</h5>
+                <h5>{formData?.id}</h5>
               </div>
               <div className="d-flex align-items-center">
                 <h4>Exam Date : </h4>
-                <h5>{formData.examDate}</h5>
+                <h5>{formData?.examDate}</h5>
               </div>
               <div className="d-flex align-items-center">
                 <h4>Height : </h4>
-                <h5>{formData.height}</h5>
+                <h5>{formData?.height}</h5>
               </div>
             </div>
           </div>
@@ -140,8 +141,8 @@ const PDF = ({ formData }) => {
                   style={{ flex: 0.5 }}
                 >
                   <div className="d-flex flex-column">
-                    <h5>6/6</h5>
-                    <h5>6/6</h5>
+                    <h5>{formData?.reye}</h5>
+                    <h5>{formData?.leye}</h5>
                   </div>
                 </div>
               </div>
@@ -160,8 +161,8 @@ const PDF = ({ formData }) => {
                   style={{ flex: 0.5 }}
                 >
                   <div className="d-flex flex-column">
-                    <h5>NAD</h5>
-                    <h5>NAD</h5>
+                    <h5>{formData?.rear}</h5>
+                    <h5>{formData?.lear}</h5>
                   </div>
                 </div>
               </div>
@@ -178,9 +179,9 @@ const PDF = ({ formData }) => {
                   className="d-flex flex-column align-items-center justify-content-end"
                   style={{ flex: 0.5 }}
                 >
-                  <h5>NAD</h5>
-                  <h5>118/78</h5>
-                  <h5>NAD</h5>
+                  <h5>{formData?.cardiovascular}</h5>
+                  <h5>{formData?.bp}</h5>
+                  <h5>{formData?.heart}</h5>
                 </div>
               </div>
               <div className="d-flex border-bottom">
@@ -194,7 +195,7 @@ const PDF = ({ formData }) => {
                   className="d-flex flex-column align-items-center justify-content-end"
                   style={{ flex: 0.5 }}
                 >
-                  <h5>NAD</h5>
+                  <h5>{formData?.lungs}</h5>
                 </div>
               </div>
               <div className="d-flex border-bottom">
@@ -207,7 +208,7 @@ const PDF = ({ formData }) => {
                   className="d-flex flex-column align-items-center justify-content-end"
                   style={{ flex: 0.5 }}
                 >
-                  <h5>NAD</h5>
+                  <h5>{formData?.xray}</h5>
                 </div>
               </div>
               <div className="d-flex border-bottom">
@@ -221,7 +222,7 @@ const PDF = ({ formData }) => {
                   className="d-flex flex-column align-items-center justify-content-end"
                   style={{ flex: 0.5 }}
                 >
-                  <h5>NAD</h5>
+                  <h5>{formData?.abdomen}</h5>
                 </div>
               </div>
               <div className="d-flex border-bottom">
@@ -239,11 +240,11 @@ const PDF = ({ formData }) => {
                   className="d-flex flex-column align-items-center justify-content-end"
                   style={{ flex: 0.5 }}
                 >
-                  <h5>NAD</h5>
-                  <h5>NAD</h5>
-                  <h5>NAD</h5>
-                  <h5>NAD</h5>
-                  <h5>NAD</h5>
+                  <h5>{formData?.hernia}</h5>
+                  <h5>{formData?.vericose}</h5>
+                  <h5>{formData?.extermities}</h5>
+                  <h5>{formData?.deformities}</h5>
+                  <h5>{formData?.skin}</h5>
                 </div>
               </div>
               <div className="d-flex border-bottom">
@@ -257,7 +258,7 @@ const PDF = ({ formData }) => {
                   className="d-flex flex-column align-items-center justify-content-end"
                   style={{ flex: 0.5 }}
                 >
-                  <h5>Nil</h5>
+                  <h5>{formData?.clinical}</h5>
                 </div>
               </div>
             </div>
@@ -298,9 +299,9 @@ const PDF = ({ formData }) => {
                 className="d-flex flex-column align-items-center justify-content-end"
                 style={{ flex: 0.5 }}
               >
-                <h5>Absent</h5>
-                <h5>Absent</h5>
-                <h5>Not Detected</h5>
+                <h5>{formData?.sugar}</h5>
+                <h5>{formData?.albumin}</h5>
+                <h5>{formData?.bilharziasis}</h5>
               </div>
             </div>
             <div className="d-flex border-bottom">
@@ -319,12 +320,12 @@ const PDF = ({ formData }) => {
                 className="d-flex flex-column align-items-center justify-content-end"
                 style={{ flex: 0.5 }}
               >
-                <h5>SNR</h5>
-                <h5>SNR</h5>
-                <h5>SNR</h5>
-                <h5>SNR</h5>
-                <h5>SNR</h5>
-                <h5>SNR</h5>
+                <h5>{formData?.helminthes}</h5>
+                <h5>{formData?.giardia}</h5>
+                <h5>{formData?.bilharziasisCulture}</h5>
+                <h5>{formData?.salmonella}</h5>
+                <h5>{formData?.shigella}</h5>
+                <h5>{formData?.cholera}</h5>
               </div>
             </div>
             <div className="d-flex">
@@ -348,11 +349,11 @@ const PDF = ({ formData }) => {
                 className="d-flex flex-column align-items-center justify-content-end"
                 style={{ flex: 0.5 }}
               >
-                <h5>13.5g/dL</h5>
-                <h5>OPositive</h5>
+                <h5>{formData?.haemoglobin} g/dL</h5>
+                <h5>{formData?.bloodGroup}</h5>
                 <h5></h5>
-                <h5>Not Detected</h5>
-                <h5>Not Detected</h5>
+                <h5>{formData?.maleria}</h5>
+                <h5>{formData?.microFilaria}</h5>
               </div>
             </div>
             <div className="d-flex">
@@ -372,9 +373,9 @@ const PDF = ({ formData }) => {
                 className="d-flex flex-column align-items-center justify-content-end"
                 style={{ flex: 0.5 }}
               >
-                <h5>95.4 mg/dL</h5>
-                <h5>Normal</h5>
-                <h5>0.90 mg/dL</h5>
+                <h5>{formData?.rbs} mg/dL</h5>
+                <h5>{formData?.lft}</h5>
+                <h5>{formData?.creatinine} mg/dL</h5>
               </div>
             </div>
             <div className="d-flex border-bottom">
@@ -395,10 +396,10 @@ const PDF = ({ formData }) => {
                 className="d-flex flex-column align-items-center justify-content-end"
                 style={{ flex: 0.5 }}
               >
-                <h5>Non Reactive</h5>
-                <h5>Non Reactive</h5>
-                <h5>Non Reactive</h5>
-                <h5>Negative</h5>
+                <h5>{formData?.hiv}</h5>
+                <h5>{formData?.hbsag}</h5>
+                <h5>{formData?.antiHcv}</h5>
+                <h5>{formData?.vdrl}</h5>
               </div>
             </div>
             <div className="d-flex">
@@ -411,7 +412,7 @@ const PDF = ({ formData }) => {
                 className="d-flex flex-column align-items-center justify-content-end"
                 style={{ flex: 0.5 }}
               >
-                <h5>NA</h5>
+                <h5>{formData?.pregnancy}</h5>
               </div>
             </div>
           </div>
@@ -427,13 +428,13 @@ const PDF = ({ formData }) => {
           className="d-flex justify-content-around"
           style={{ marginTop: '2.5rem' }}
         >
-          <div className="dr1 d-flex flex-column">
-            <h4>Doctor 1</h4>
-            <h4>Position 1</h4>
+          <div className="dr1 d-flex flex-column align-items-center">
+            <h4>Dr. Milind Chincholkar</h4>
+            <h4>M.D. (Pathology)</h4>
           </div>
-          <div className="contaienr dr2 d-flex flex-column">
-            <h4>Doctor 2</h4>
-            <h4>Position 2</h4>
+          <div className="contaienr dr2 d-flex flex-column align-items-center">
+            <h4>Dr. Jyoti Sawant</h4>
+            <h4>Ph.D. (Med. Biochemistry)</h4>
           </div>
         </div>
       </div>

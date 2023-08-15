@@ -11,8 +11,6 @@ function App() {
     setUserData(data);
   };
 
-  console.log(userData);
-
   const printableRef = React.useRef();
 
   const handleDownloadPDF = () => {
