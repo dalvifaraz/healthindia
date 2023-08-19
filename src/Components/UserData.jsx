@@ -77,162 +77,31 @@ const UserData = ({ onSubmit }) => {
 
   const commonForm = (name) => {
     return (
-      <div className="d-flex flex-wrap">
-        <div className="form-check mx-5">
-          <input
-            className="form-check-input"
-            type="radio"
-            name={name}
-            id={name}
-            value="NAD"
-            onChange={(e) => handleOnChange(e)}
-          />
-          <label className="form-check-label">NAD</label>
-        </div>
-        <div className="form-check mx-5">
-          <input
-            className="form-check-input"
-            type="radio"
-            name={name}
-            id={name}
-            value="SRN"
-            onChange={(e) => handleOnChange(e)}
-          />
-          <label className="form-check-label">SRN</label>
-        </div>
-        <div className="form-check mx-5">
-          <input
-            className="form-check-input"
-            type="radio"
-            name={name}
-            id={name}
-            value="Positive"
-            onChange={(e) => handleOnChange(e)}
-          />
-          <label className="form-check-label">Positive</label>
-        </div>
-        <div className="form-check mx-5">
-          <input
-            className="form-check-input"
-            type="radio"
-            name={name}
-            id={name}
-            value="Negative"
-            onChange={(e) => handleOnChange(e)}
-          />
-          <label className="form-check-label">Negative</label>
-        </div>
-        <div className="form-check mx-5">
-          <input
-            className="form-check-input"
-            type="radio"
-            name={name}
-            id={name}
-            value="Absent"
-            onChange={(e) => handleOnChange(e)}
-          />
-          <label className="form-check-label">Absent</label>
-        </div>
-        <div className="form-check mx-5">
-          <input
-            className="form-check-input"
-            type="radio"
-            name={name}
-            id={name}
-            value="Present"
-            onChange={(e) => handleOnChange(e)}
-          />
-          <label className="form-check-label">Present</label>
-        </div>
-        <div className="form-check mx-5">
-          <input
-            className="form-check-input"
-            type="radio"
-            name={name}
-            id={name}
-            value="Detected"
-            onChange={(e) => handleOnChange(e)}
-          />
-          <label className="form-check-label">Detected</label>
-        </div>
-        <div className="form-check mx-5">
-          <input
-            className="form-check-input"
-            type="radio"
-            name={name}
-            id={name}
-            value="Not Detected"
-            onChange={(e) => handleOnChange(e)}
-          />
-          <label className="form-check-label">Not Detected</label>
-        </div>
-        <div className="form-check mx-5">
-          <input
-            className="form-check-input"
-            type="radio"
-            name={name}
-            id={name}
-            value="Reactive"
-            onChange={(e) => handleOnChange(e)}
-          />
-          <label className="form-check-label">Reactive</label>
-        </div>
-        <div className="form-check mx-5">
-          <input
-            className="form-check-input"
-            type="radio"
-            name={name}
-            id={name}
-            value="Non Reactive"
-            onChange={(e) => handleOnChange(e)}
-          />
-          <label className="form-check-label">Non Reactive</label>
-        </div>
-        <div className="form-check mx-5">
-          <input
-            className="form-check-input"
-            type="radio"
-            name={name}
-            id={name}
-            value="NA"
-            onChange={(e) => handleOnChange(e)}
-          />
-          <label className="form-check-label">NA</label>
-        </div>
-        <div className="form-check mx-5">
-          <input
-            className="form-check-input"
-            type="radio"
-            name={name}
-            id={name}
-            value="Nil"
-            onChange={(e) => handleOnChange(e)}
-          />
-          <label className="form-check-label">Nil</label>
-        </div>
-        <div className="form-check mx-5">
-          <input
-            className="form-check-input"
-            type="radio"
-            name={name}
-            id={name}
-            value="Normal"
-            onChange={(e) => handleOnChange(e)}
-          />
-          <label className="form-check-label">Normal</label>
-        </div>
-        <div className="form-check mx-5">
-          <input
-            className="form-check-input"
-            type="radio"
-            name={name}
-            id={name}
-            value="other"
-            onChange={(e) => handleOnChange(e)}
-          />
-          <label className="form-check-label">Other</label>
-        </div>
-      </div>
+      <select
+        id={name}
+        value={userData[name]}
+        onChange={(e) => handleOnChange(e)}
+        class="form-select mb-3"
+        aria-label="Default select example"
+      >
+        <option selected value="">
+          Open this select menu
+        </option>
+        <option value="NAD">NAD</option>
+        <option value="SRN">SRN</option>
+        <option value="Positive">Positive</option>
+        <option value="Negative">Negative</option>
+        <option value="Detected">Detected</option>
+        <option value="Not Detected">Not Detected</option>
+        <option value="Absent">Absent</option>
+        <option value="Present">Present</option>
+        <option value="Reactive">Reactive</option>
+        <option value="Non Reactive">Non Reactive</option>
+        <option value="Nil">Nil</option>
+        <option value="Normal">Normal</option>
+        <option value="NA">NA</option>
+        <option value="">Other</option>
+      </select>
     );
   };
 
@@ -642,7 +511,16 @@ const UserData = ({ onSubmit }) => {
         </div>
         <div className="mb-3">
           <label className="form-label">CREATININE*:</label>
-          {commonForm('creatinine')}
+          {/* {commonForm('creatinine')} */}
+          <input
+            className="form-control"
+            type="number"
+            id="creatinine"
+            placeholder="Please Provice data as it need to be shown..."
+            value={userData.creatinine}
+            onChange={(e) => handleOnChange(e)}
+            required
+          />
         </div>
         <div className="mb-3">
           <label className="form-label">HIV*:</label>
