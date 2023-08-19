@@ -3,6 +3,7 @@ import './pdf.css';
 import logo from './logo2.png';
 import sign from './sign.png';
 import stamp from './stamp.png';
+import UserData from './UserData';
 
 const PDF = ({ formData }) => {
   console.log('hello', formData);
@@ -18,7 +19,6 @@ const PDF = ({ formData }) => {
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%) rotate(-45deg)  scale(2, 2)',
-          // transform: 'rotate(-45deg)',
           opacity: 0.2,
           fontSize: '2.5rem',
           fontWeight: 'bold',
@@ -27,12 +27,15 @@ const PDF = ({ formData }) => {
       >
         Health India Medical Center
       </h6>
-      <div className="d-flex justify-content-around">
+      <div className="d-flex justify-content-around align-items-end">
         <div className="logo">
           <img src={logo} alt="Logo" height={125} width={125} />
         </div>
         <div className="d-flex flex-column align-items-center">
-          <h1 className="mt-5" style={{ color: '#146c95' }}>
+          <h1
+            className=""
+            style={{ color: '#146c95', fontSize: '3rem', fontWeight: 'bold' }}
+          >
             Health India Medical Center
           </h1>
           <h4>Shop No 07, Khan Complex, Shilphata, Mumbra, Thane 400612</h4>
@@ -40,6 +43,9 @@ const PDF = ({ formData }) => {
           <h4>Email - healthindia8451@gmail.com</h4>
         </div>
       </div>
+      <h4 style={{ display: 'flex', flexDirection: 'row-reverse' }}>
+        TEST REPORT
+      </h4>
       <div className="d-flex flex-row border">
         <div className="d-flex border-end" style={{ flex: 0.2 }}></div>
         <div className="d-flex flex-column " style={{ flex: 1 }}>
@@ -48,43 +54,43 @@ const PDF = ({ formData }) => {
               <h4>Name : {formData?.name}</h4>
               <div className="d-flex align-items-center">
                 <h4>Passport No : </h4>
-                <h5>{formData?.passportNumber}</h5>
+                <h4>{formData?.passportNumber}</h4>
               </div>
               <div className="d-flex align-items-center">
                 <h4>Profession Agency : </h4>
-                <h5>{formData?.profession}</h5>
+                <h4>{formData?.profession}</h4>
               </div>
               <div className="d-flex align-items-center">
                 <h4>Recruiting Agency : </h4>
-                <h5>{formData?.recruitingAgency}</h5>
+                <h4>{formData?.recruitingAgency}</h4>
               </div>
             </div>
             <div style={{ flex: 0.5 }}>
               <div className="d-flex align-items-center">
                 <h4>Age : </h4>
-                <h5>{formData?.age}</h5>
+                <h4>{formData?.age}</h4>
               </div>
               <div className="d-flex align-items-center">
                 <h4>Gender : </h4>
-                <h5>{formData?.gender}</h5>
+                <h4>{formData?.gender}</h4>
               </div>
               <div className="d-flex align-items-center">
                 <h4>Weight : </h4>
-                <h5>{formData?.weight}</h5>
+                <h4>{formData?.weight}</h4>
               </div>
             </div>
             <div style={{ flex: 1 }}>
               <div className="d-flex align-items-center">
                 <h4>ID : </h4>
-                <h5>{formData?.id}</h5>
+                <h4>{formData?.id}</h4>
               </div>
               <div className="d-flex align-items-center">
                 <h4>Exam Date : </h4>
-                <h5>{formData?.examDate}</h5>
+                <h4>{formData?.examDate}</h4>
               </div>
               <div className="d-flex align-items-center">
                 <h4>Height : </h4>
-                <h5>{formData?.height}</h5>
+                <h4>{formData?.height}</h4>
               </div>
             </div>
           </div>
@@ -136,19 +142,22 @@ const PDF = ({ formData }) => {
               <div className="d-flex border-bottom">
                 <div
                   className="d-flex justify-content-center"
-                  style={{ flex: 1 }}
+                  style={{ flex: 1, paddingTop: '1px' }}
                 >
                   <h4>TYPE OF MEDICAL EXAMINATION</h4>
                 </div>
                 <div
                   className="d-flex justify-content-center"
-                  style={{ flex: 0.5 }}
+                  style={{ flex: 0.5, paddingTop: '1px' }}
                 >
                   <h4>Result</h4>
                 </div>
               </div>
               <div className="d-flex border-bottom">
-                <div className="border-end" style={{ flex: 1 }}>
+                <div
+                  className="border-end"
+                  style={{ flex: 1, paddingTop: '1px' }}
+                >
                   <div className="d-flex justify-content-around">
                     <h4>EYE</h4>
                     <div className="d-flex flex-column">
@@ -159,7 +168,7 @@ const PDF = ({ formData }) => {
                 </div>
                 <div
                   className="d-flex justify-content-center"
-                  style={{ flex: 0.5 }}
+                  style={{ flex: 0.5, paddingTop: '1px' }}
                 >
                   <div className="d-flex flex-column">
                     <h5>{formData?.reye}</h5>
@@ -168,7 +177,10 @@ const PDF = ({ formData }) => {
                 </div>
               </div>
               <div className="d-flex border-bottom">
-                <div className="border-end" style={{ flex: 1 }}>
+                <div
+                  className="border-end"
+                  style={{ flex: 1, paddingTop: '1px' }}
+                >
                   <div className="d-flex justify-content-around">
                     <h4>EAR</h4>
                     <div className="d-flex flex-column">
@@ -178,8 +190,8 @@ const PDF = ({ formData }) => {
                   </div>
                 </div>
                 <div
-                  className="d-flex justify-content-center"
-                  style={{ flex: 0.5 }}
+                  className="d-flex flex-column align-items-center justify-content-end"
+                  style={{ flex: 0.5, paddingTop: '1px' }}
                 >
                   <div className="d-flex flex-column">
                     <h5>{formData?.rear}</h5>
@@ -188,7 +200,10 @@ const PDF = ({ formData }) => {
                 </div>
               </div>
               <div className="d-flex border-bottom">
-                <div className="border-end" style={{ flex: 1 }}>
+                <div
+                  className="border-end"
+                  style={{ flex: 1, paddingTop: '1px' }}
+                >
                   <div className="d-flex flex-column ps-5">
                     <h4>SYSTEMATIC EXAM</h4>
                     <h5>CARDIOVASCULAR</h5>
@@ -198,7 +213,7 @@ const PDF = ({ formData }) => {
                 </div>
                 <div
                   className="d-flex flex-column align-items-center justify-content-end"
-                  style={{ flex: 0.5 }}
+                  style={{ flex: 0.5, paddingTop: '1px' }}
                 >
                   <h5>{formData?.cardiovascular}</h5>
                   <h5>{formData?.bp}</h5>
@@ -206,7 +221,10 @@ const PDF = ({ formData }) => {
                 </div>
               </div>
               <div className="d-flex border-bottom">
-                <div className="border-end" style={{ flex: 1 }}>
+                <div
+                  className="border-end"
+                  style={{ flex: 1, paddingTop: '1px' }}
+                >
                   <div className="d-flex flex-column ps-5">
                     <h4>RESPIRATORY SYSTEM</h4>
                     <h5>LUNGS</h5>
@@ -214,26 +232,32 @@ const PDF = ({ formData }) => {
                 </div>
                 <div
                   className="d-flex flex-column align-items-center justify-content-end"
-                  style={{ flex: 0.5 }}
+                  style={{ flex: 0.5, paddingTop: '1px' }}
                 >
                   <h5>{formData?.lungs}</h5>
                 </div>
               </div>
               <div className="d-flex border-bottom">
-                <div className="border-end" style={{ flex: 1 }}>
+                <div
+                  className="border-end"
+                  style={{ flex: 1, paddingTop: '1px' }}
+                >
                   <div className="d-flex flex-column ps-5">
                     <h4>CHEST X-RAY</h4>
                   </div>
                 </div>
                 <div
                   className="d-flex flex-column align-items-center justify-content-end"
-                  style={{ flex: 0.5 }}
+                  style={{ flex: 0.5, paddingTop: '1px' }}
                 >
                   <h5>{formData?.xray}</h5>
                 </div>
               </div>
               <div className="d-flex border-bottom">
-                <div className="border-end" style={{ flex: 1 }}>
+                <div
+                  className="border-end"
+                  style={{ flex: 1, paddingTop: '1px' }}
+                >
                   <div className="d-flex flex-column ps-5">
                     <h4>GASTROINTESTINAL</h4>
                     <h5>ABDOMEN</h5>
@@ -241,13 +265,16 @@ const PDF = ({ formData }) => {
                 </div>
                 <div
                   className="d-flex flex-column align-items-center justify-content-end"
-                  style={{ flex: 0.5 }}
+                  style={{ flex: 0.5, paddingTop: '1px' }}
                 >
                   <h5>{formData?.abdomen}</h5>
                 </div>
               </div>
               <div className="d-flex border-bottom">
-                <div className="border-end" style={{ flex: 1 }}>
+                <div
+                  className="border-end"
+                  style={{ flex: 1, paddingTop: '1px' }}
+                >
                   <div className="d-flex flex-column ps-5">
                     <h4>OTHERS</h4>
                     <h5>HERNIA</h5>
@@ -259,7 +286,7 @@ const PDF = ({ formData }) => {
                 </div>
                 <div
                   className="d-flex flex-column align-items-center justify-content-end"
-                  style={{ flex: 0.5 }}
+                  style={{ flex: 0.5, paddingTop: '1px' }}
                 >
                   <h5>{formData?.hernia}</h5>
                   <h5>{formData?.vericose}</h5>
@@ -269,7 +296,10 @@ const PDF = ({ formData }) => {
                 </div>
               </div>
               <div className="d-flex border-bottom">
-                <div className="border-end" style={{ flex: 1 }}>
+                <div
+                  className="border-end"
+                  style={{ flex: 1, paddingTop: '1px' }}
+                >
                   <div className="d-flex flex-column ps-5">
                     <h4>VENERAL DISEASES</h4>
                     <h5>CLINICAL</h5>
@@ -277,50 +307,65 @@ const PDF = ({ formData }) => {
                 </div>
                 <div
                   className="d-flex flex-column align-items-center justify-content-end"
-                  style={{ flex: 0.5 }}
+                  style={{ flex: 0.5, paddingTop: '1px' }}
                 >
                   <h5>{formData?.clinical}</h5>
                 </div>
+              </div>
+              <div className="d-flex mt-2">
+                <h3
+                  className="ps-5"
+                  style={{
+                    color: formData.fit == 'true' ? 'black' : 'red',
+                    fontWeight: 'bolder',
+                  }}
+                >
+                  {formData.fit == 'true' ? 'FIT' : 'UNFIT'}
+                </h3>
               </div>
             </div>
           </div>
           <div
             className="d-flex flex-column border-end border-start"
-            style={{ flex: 1 }}
+            style={{ flex: 1, paddingTop: '1px' }}
           >
             <div className="d-flex border-bottom">
               <div
                 className="d-flex border-end justify-content-center"
-                style={{ flex: 1 }}
+                style={{ flex: 1, paddingTop: '1px' }}
               >
                 <h4>TYPE OF LAB INVESTIGATION</h4>
               </div>
               <div
                 className="d-flex justify-content-center"
-                style={{ flex: 0.5 }}
+                style={{ flex: 0.5, paddingTop: '1px' }}
               >
                 <h4>Result</h4>
               </div>
             </div>
 
             <div className="d-flex border-bottom">
-              <div className="border-end" style={{ flex: 1 }}>
+              <div
+                className="border-end"
+                style={{ flex: 1, paddingTop: '1px' }}
+              >
                 <div className="d-flex ps-5">
                   <div className="col-3" style={{}}>
                     <h4>URINE</h4>
                   </div>
-                  <div className="d-flex flex-column col-7" style={{ flex: 1 }}>
+                  <div
+                    className="d-flex flex-column col-7 mt-1"
+                    style={{ flex: 1, paddingTop: '1px' }}
+                  >
                     <h5>SUGAR</h5>
                     <h5>ALBUMIN</h5>
-                    <h5>
-                      BILHARZIASIS <span>(IF ENDEMIC)</span>
-                    </h5>
+                    <h5 className="">BILHARZIASIS (IF ENDEMIC)</h5>
                   </div>
                 </div>
               </div>
               <div
                 className="d-flex flex-column align-items-center justify-content-end"
-                style={{ flex: 0.5 }}
+                style={{ flex: 0.5, paddingTop: '1px' }}
               >
                 <h5>{formData?.sugar}</h5>
                 <h5>{formData?.albumin}</h5>
@@ -328,24 +373,23 @@ const PDF = ({ formData }) => {
               </div>
             </div>
             <div className="d-flex border-bottom">
-              <div className="border-end" style={{ flex: 1 }}>
+              <div
+                className="border-end"
+                style={{ flex: 1, paddingTop: '1px' }}
+              >
                 <div className="d-flex flex-column ps-5">
                   <h4>STOOL ROUTINE</h4>
                   <h5>HELMINTHES</h5>
                   <h5>GIARDIA</h5>
-                  <h5>
-                    BILHARZIASIS <span>(IF ENDEMIC)</span> CULTURE
-                  </h5>
+                  <h5 className="">BILHARZIASIS (IF ENDEMIC) CULTURE</h5>
                   <h5>SALMONELLA</h5>
                   <h5>SHIGELLA</h5>
-                  <h5>
-                    V. CHOLERA <span>(IF ENDEMIC)</span>
-                  </h5>
+                  <h5 className="">V. CHOLERA (IF ENDEMIC)</h5>
                 </div>
               </div>
               <div
                 className="d-flex flex-column align-items-center justify-content-end"
-                style={{ flex: 0.5 }}
+                style={{ flex: 0.5, paddingTop: '1px' }}
               >
                 <h5>{formData?.helminthes}</h5>
                 <h5>{formData?.giardia}</h5>
@@ -356,12 +400,18 @@ const PDF = ({ formData }) => {
               </div>
             </div>
             <div className="d-flex">
-              <div className="border-end" style={{ flex: 1 }}>
+              <div
+                className="border-end"
+                style={{ flex: 1, paddingTop: '1px' }}
+              >
                 <div className="d-flex ps-5">
                   <div className="col-5" style={{}}>
                     <h4>HEMATOLOGY</h4>
                   </div>
-                  <div className="d-flex flex-column col-7" style={{ flex: 1 }}>
+                  <div
+                    className="d-flex flex-column col-7 mt-1"
+                    style={{ flex: 1, paddingTop: '1px' }}
+                  >
                     <h5>HAEMOGLOBIN</h5>
                     <h5>BLOODGROUP</h5>
                     <div className="" style={{ marginLeft: '-2rem' }}>
@@ -374,17 +424,22 @@ const PDF = ({ formData }) => {
               </div>
               <div
                 className="d-flex flex-column align-items-center justify-content-end"
-                style={{ flex: 0.5 }}
+                style={{ flex: 0.5, paddingTop: '1px' }}
               >
                 <h5>{formData?.haemoglobin} g/dL</h5>
                 <h5>{formData?.bloodGroup}</h5>
+                <h5></h5>
+                <h5></h5>
                 <h5></h5>
                 <h5>{formData?.maleria}</h5>
                 <h5>{formData?.microFilaria}</h5>
               </div>
             </div>
             <div className="d-flex">
-              <div className="border-end" style={{ flex: 1 }}>
+              <div
+                className="border-end"
+                style={{ flex: 1, paddingTop: '1px' }}
+              >
                 <div className="d-flex ps-5">
                   <div className="col-5" style={{}}>
                     <h4>BIOCHEMISTRY</h4>
@@ -398,7 +453,7 @@ const PDF = ({ formData }) => {
               </div>
               <div
                 className="d-flex flex-column align-items-center justify-content-end"
-                style={{ flex: 0.5 }}
+                style={{ flex: 0.5, paddingTop: '1px' }}
               >
                 <h5>{formData?.rbs} mg/dL</h5>
                 <h5>{formData?.lft}</h5>
@@ -406,12 +461,18 @@ const PDF = ({ formData }) => {
               </div>
             </div>
             <div className="d-flex border-bottom">
-              <div className="border-end" style={{ flex: 1 }}>
+              <div
+                className="border-end"
+                style={{ flex: 1, paddingTop: '1px' }}
+              >
                 <div className="d-flex ps-5">
                   <div className="col-5" style={{}}>
                     <h4>SEROLOGY</h4>
                   </div>
-                  <div className="d-flex flex-column col-7" style={{ flex: 1 }}>
+                  <div
+                    className="d-flex flex-column col-7"
+                    style={{ flex: 1, paddingTop: '1px' }}
+                  >
                     <h5>1. HIV 1I & II</h5>
                     <h5>2. HBsAg</h5>
                     <h5>3. ANTI HCV</h5>
@@ -421,7 +482,7 @@ const PDF = ({ formData }) => {
               </div>
               <div
                 className="d-flex flex-column align-items-center justify-content-end"
-                style={{ flex: 0.5 }}
+                style={{ flex: 0.5, paddingTop: '1px' }}
               >
                 <h5>{formData?.hiv}</h5>
                 <h5>{formData?.hbsag}</h5>
@@ -429,15 +490,18 @@ const PDF = ({ formData }) => {
                 <h5>{formData?.vdrl}</h5>
               </div>
             </div>
-            <div className="d-flex">
-              <div className="border-end" style={{ flex: 1 }}>
+            <div className="d-flex border-bottom">
+              <div
+                className="border-end"
+                style={{ flex: 1, paddingTop: '1px' }}
+              >
                 <div className="d-flex ps-5">
                   <h4>PREGNANCY TEST</h4>
                 </div>
               </div>
               <div
                 className="d-flex flex-column align-items-center justify-content-end"
-                style={{ flex: 0.5 }}
+                style={{ flex: 0.5, paddingTop: '1px' }}
               >
                 <h5>{formData?.pregnancy}</h5>
               </div>
@@ -446,26 +510,24 @@ const PDF = ({ formData }) => {
         </div>
       </div>
       <div className="border-bottom border-secondary border-2 mt-2">
-        <h4 className="mb-1">REMARKS:</h4>
-        <h4 className="" style={{ zIndex: 99 }}>
-          The medical report indicates that the person may be fit for the above
-          mentioned job
-        </h4>
-
+        <div className="d-flex">
+          <h4 className="mb-1">REMARKS:</h4>
+          <h4 className="">
+            {formData?.remark?.length > 0
+              ? formData.remark
+              : 'The medical report indicates that the person may be fit for the above mentioned job'}
+          </h4>
+        </div>
         <div
           className="d-flex justify-content-end align-items-center"
           style={{
             marginTop: '5rem',
-            marginRight: '15rem',
+            marginRight: '5rem',
             position: 'relative',
           }}
         >
-          {/* <div className="dr1 d-flex flex-column align-items-center">
-            <h4>Dr. Milind Chincholkar</h4>
-            <h4>M.D. (Pathology)</h4>
-          </div> */}
           <img
-            style={{ position: 'absolute', right: 140, bottom: 1, zIndex: 9 }}
+            style={{ position: 'absolute', right: 150, bottom: 1, zIndex: 9 }}
             src={stamp}
             alt="stamp"
             height={90}

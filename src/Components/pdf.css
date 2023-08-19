@@ -1,22 +1,25 @@
 h5{
-    margin-top: 3px !important;
+    /* margin-top: 4px !important; */
     margin-left: 5px !important;
     font-size: 1.1rem !important;
     font-weight: normal !important;
 }
 
 h4{
+    margin-left: 2px !important;
     font-size: 1.2rem !important;
-    font-weight: bolder !important;
+    font-weight: 500 !important;
+    margin-top: 2px !important;
+}
+
+h3 {
+    margin-left: 2px !important;
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
     margin-top: 2px !important;
 }
 
 span{
     font-size: 0.8rem !important;
-}
-
-h1 {
-    font-family: fantasy !important;
-    font-size: 3rem !important;
-    /* letter-spacing: 0.2rem !important; */
+    margin-bottom: 4px !important;
 }

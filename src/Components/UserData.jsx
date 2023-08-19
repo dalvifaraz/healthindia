@@ -30,7 +30,7 @@ export const userInitialState = {
   abdomen: '',
   hernia: '',
   vericose: '',
-  extermities: '',
+  extremities: '',
   deformities: '',
   skin: '',
   clinical: '',
@@ -55,6 +55,8 @@ export const userInitialState = {
   antiHcv: '',
   vdrl: '',
   pregnancy: '',
+  fit: false,
+  remark: '',
 };
 
 const UserData = ({ onSubmit }) => {
@@ -474,7 +476,34 @@ const UserData = ({ onSubmit }) => {
           <label className="form-label">PREGNANCY TEST*:</label>
           {commonForm('pregnancy')}
         </div>
-
+        <div className="mb-3">
+          <label className="form-label">FIT*:</label>
+          <select
+            id={'fit'}
+            value={userData.fit}
+            onChange={(e) => handleOnChange(e)}
+            class="form-select mb-3"
+            required
+            aria-label="Default select example"
+          >
+            <option selected value="">
+              Open this select menu
+            </option>
+            <option value="true">Fit</option>
+            <option value="false">Unfit</option>
+          </select>
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Remark:</label>
+          <input
+            className="form-control"
+            type="text"
+            id="remark"
+            placeholder="Please Provice data as it need to be shown..."
+            value={userData.remark}
+            onChange={(e) => handleOnChange(e)}
+          />
+        </div>
         <div>
           <button type="submit" className="btn btn-primary w-100 mb-3">
             Submit
