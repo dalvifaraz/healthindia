@@ -12,10 +12,11 @@ h4{
 }
 
 span{
-    font-size: 1rem !important;
+    font-size: 0.8rem !important;
 }
 
 h1 {
     font-family: fantasy !important;
-    letter-spacing: 0.2em !important;
+    font-size: 3rem !important;
+    /* letter-spacing: 0.2rem !important; */
 }

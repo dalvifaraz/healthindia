@@ -1,11 +1,32 @@
 import React from 'react';
 import './pdf.css';
 import logo from './logo2.png';
+import sign from './sign.png';
+import stamp from './stamp.png';
 
 const PDF = ({ formData }) => {
   console.log('hello', formData);
   return (
-    <div className="container pdf-content printable-content canvas">
+    <div
+      className="container pdf-content printable-content canvas"
+      style={{ position: 'relative' }}
+    >
+      <h6
+        style={{
+          color: '#146c95',
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%) rotate(-45deg)  scale(2, 2)',
+          // transform: 'rotate(-45deg)',
+          opacity: 0.2,
+          fontSize: '2.5rem',
+          fontWeight: 'bold',
+          // font,
+        }}
+      >
+        Health India Medical Center
+      </h6>
       <div className="d-flex justify-content-around">
         <div className="logo">
           <img src={logo} alt="Logo" height={125} width={125} />
@@ -291,7 +312,9 @@ const PDF = ({ formData }) => {
                   <div className="d-flex flex-column col-7" style={{ flex: 1 }}>
                     <h5>SUGAR</h5>
                     <h5>ALBUMIN</h5>
-                    <h5>BILHARZIASIS (IF ENDEMIC)</h5>
+                    <h5>
+                      BILHARZIASIS <span>(IF ENDEMIC)</span>
+                    </h5>
                   </div>
                 </div>
               </div>
@@ -310,10 +333,14 @@ const PDF = ({ formData }) => {
                   <h4>STOOL ROUTINE</h4>
                   <h5>HELMINTHES</h5>
                   <h5>GIARDIA</h5>
-                  <h5>BILHARZIASIS (IF ENDEMIC) CULTURE</h5>
+                  <h5>
+                    BILHARZIASIS <span>(IF ENDEMIC)</span> CULTURE
+                  </h5>
                   <h5>SALMONELLA</h5>
                   <h5>SHIGELLA</h5>
-                  <h5>V. CHOLERA (IF ENDEMIC)</h5>
+                  <h5>
+                    V. CHOLERA <span>(IF ENDEMIC)</span>
+                  </h5>
                 </div>
               </div>
               <div
@@ -419,22 +446,41 @@ const PDF = ({ formData }) => {
         </div>
       </div>
       <div className="border-bottom border-secondary border-2 mt-2">
-        <h4 className="mb-2">REMARKS:</h4>
-        <h4 className="">
+        <h4 className="mb-1">REMARKS:</h4>
+        <h4 className="" style={{ zIndex: 99 }}>
           The medical report indicates that the person may be fit for the above
           mentioned job
         </h4>
+
         <div
-          className="d-flex justify-content-around"
-          style={{ marginTop: '2.5rem' }}
+          className="d-flex justify-content-end align-items-center"
+          style={{
+            marginTop: '5rem',
+            marginRight: '15rem',
+            position: 'relative',
+          }}
         >
-          <div className="dr1 d-flex flex-column align-items-center">
+          {/* <div className="dr1 d-flex flex-column align-items-center">
             <h4>Dr. Milind Chincholkar</h4>
             <h4>M.D. (Pathology)</h4>
-          </div>
+          </div> */}
+          <img
+            style={{ position: 'absolute', right: 140, bottom: 1, zIndex: 9 }}
+            src={stamp}
+            alt="stamp"
+            height={90}
+            width={90}
+          />
+          <img
+            style={{ position: 'absolute', right: 10, bottom: 40 }}
+            src={sign}
+            alt="sign"
+            height={50}
+            width={100}
+          />
           <div className="contaienr dr2 d-flex flex-column align-items-center">
-            <h4>Dr. Jyoti Sawant</h4>
-            <h4>Ph.D. (Med. Biochemistry)</h4>
+            <h4>Dr.(Mrs) Anjum A Sharif</h4>
+            <h4>M.B.B.S, M.D(Path)</h4>
           </div>
         </div>
       </div>

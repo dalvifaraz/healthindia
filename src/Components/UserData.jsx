@@ -82,6 +82,7 @@ const UserData = ({ onSubmit }) => {
         value={userData[name]}
         onChange={(e) => handleOnChange(e)}
         class="form-select mb-3"
+        required
         aria-label="Default select example"
       >
         <option selected value="">
@@ -392,96 +393,27 @@ const UserData = ({ onSubmit }) => {
         </div>
         <div className="mb-3">
           <label className="form-label">BLOODGROUP*:</label>
-          <div className="d-flex flex-wrap">
-            <div className="form-check mx-5">
-              <input
-                className="form-check-input"
-                type="radio"
-                name="bloodGroup"
-                id="bloodGroup"
-                value="O Positive"
-                onChange={(e) => handleOnChange(e)}
-              />
-              <label className="form-check-label">O Positive</label>
-            </div>
-            <div className="form-check mx-5">
-              <input
-                className="form-check-input"
-                type="radio"
-                name="bloodGroup"
-                id="bloodGroup"
-                value="O Negativ"
-                onChange={(e) => handleOnChange(e)}
-              />
-              <label className="form-check-label">O Negativ</label>
-            </div>
-            <div className="form-check mx-5">
-              <input
-                className="form-check-input"
-                type="radio"
-                name="bloodGroup"
-                id="bloodGroup"
-                value="A Positive"
-                onChange={(e) => handleOnChange(e)}
-              />
-              <label className="form-check-label">A Positive</label>
-            </div>
-            <div className="form-check mx-5">
-              <input
-                className="form-check-input"
-                type="radio"
-                name="bloodGroup"
-                id="bloodGroup"
-                value="A Negative"
-                onChange={(e) => handleOnChange(e)}
-              />
-              <label className="form-check-label">A Negative</label>
-            </div>
-            <div className="form-check mx-5">
-              <input
-                className="form-check-input"
-                type="radio"
-                name="bloodGroup"
-                id="bloodGroup"
-                value="B Positive"
-                onChange={(e) => handleOnChange(e)}
-              />
-              <label className="form-check-label">B Positive</label>
-            </div>
-            <div className="form-check mx-5">
-              <input
-                className="form-check-input"
-                type="radio"
-                name="bloodGroup"
-                id="bloodGroup"
-                value="B Negative"
-                onChange={(e) => handleOnChange(e)}
-              />
-              <label className="form-check-label">B Negative</label>
-            </div>
-            <div className="form-check mx-5">
-              <input
-                className="form-check-input"
-                type="radio"
-                name="bloodGroup"
-                id="bloodGroup"
-                value="AB Positive"
-                onChange={(e) => handleOnChange(e)}
-              />
-              <label className="form-check-label">AB Positive</label>
-            </div>
-            <div className="form-check mx-5">
-              <input
-                className="form-check-input"
-                type="radio"
-                name="bloodGroup"
-                id="bloodGroup"
-                value="AB Negative"
-                onChange={(e) => handleOnChange(e)}
-              />
-              <label className="form-check-label">AB Negative</label>
-            </div>
-          </div>
+          <select
+            id="bloodGroup"
+            value={userData.bloodGroup}
+            onChange={(e) => handleOnChange(e)}
+            class="form-select mb-3"
+            aria-label="Default select example"
+            required
+          >
+            <option selected value="">
+              Open this select menu
+            </option>
+            <option value="O Positive">O Positive</option>
+            <option value="O Negative">O Negative</option>
+            <option value="A Positive">A Positive</option>
+            <option value="A Negative">A Negative</option>
+            <option value="B Positive">B Positive</option>
+            <option value="B Negative">B Negative</option>
+            <option value="AB Positive">AB Positive</option>
+            <option value="AB Negative">AB Negative</option>
+            <option value="---">---</option>
+          </select>
         </div>
         <div className="mb-3">
           <label className="form-label">MALERIA*:</label>
